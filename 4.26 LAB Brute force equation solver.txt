@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+ int a,b,c,d,e,f;
+ // inputs
+ cin>>a>>b>>c;
+ cin>>d>>e>>f;
+ 
+ //brute force approach
+ for (int x = -10; x <= 10; x++)
+    {
+        for(int y = -10; y <= 10; y++)
+        {
+            //Check if the current x and y satisfy both equations
+            if (((a*x)+(b*y)==c) && ((d*x)-(e*y)==f))
+            {
+                //printing the x and y values
+                cout<<"x = "<<x<<" "<<"y = "<<y;
+            }
+        }
+    }
+return 0;
+}
