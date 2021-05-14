@@ -1,0 +1,20 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+   auto num1;
+   auto num2;
+   auto num3;
+   auto num4;
+
+   cin >> num1 >> num2 >> num3 >> num4;
+   cout << int(num1*num2*num3*num4) << " " << int(num1+num2+num3+num4)/4 << endl; // first half
+   
+   cout << fixed << setprecision(3);
+   cout << double(num1*num2*num3*num4) << " " << double(num1+num2+num3+num4)/4 << endl; // second
+   
+
+   return 0;
+}

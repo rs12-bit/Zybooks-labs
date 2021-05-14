@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+   double percentage;
+   
+   cin >> percentage;
+   
+   percentage = percentage/100;
+   
+   cout << percentage << endl;
+   
+   
+   return 0;
+}

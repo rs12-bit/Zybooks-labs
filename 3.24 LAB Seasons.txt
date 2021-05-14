@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+   string inputMonth;
+   int inputDay;
+   
+   cin >> inputMonth;
+   cin >> inputDay;
+   
+   if(inputMonth == "March" && inputDay >= 20){
+      cout << "Spring" << endl;
+   }
+   else if(inputMonth == "April" && inputDay <= 30){
+      cout << "Spring" << endl;
+   }
+   else if(inputMonth == "May" && inputDay <= 31){
+      cout << "Spring" << endl;
+   }
+   else if(inputMonth == "June" && inputDay <= 20){
+      cout << "Spring" << endl;
+   }
+   else if(inputMonth == "June" && inputDay >= 21){
+      cout << "Summer" << endl;
+   }
+   else if(inputMonth == "July" && inputDay <= 31){
+      cout << "Summer" << endl;
+   }
+   else if(inputMonth == "August" && inputDay <= 31){
+      cout << "Summer" << endl;
+   }
+   else if(inputMonth == "September" && inputDay <= 21){
+      cout << "Summer" << endl;
+   }
+   else if(inputMonth == "September" && inputDay >= 22 && inputDay != 31){
+      cout << "Autmn" << endl;
+   }
+   else if(inputMonth == "October" && inputDay <= 31){
+      cout << "Autumn" << endl;
+   }
+   else if(inputMonth == "November" && inputDay <= 30){
+      cout << "Autumn" << endl;
+   }
+   else if(inputMonth == "December" && inputDay <= 20 && inputDay > 0){
+      cout << "Autumn" << endl;
+   }
+   else if(inputMonth == "December" && inputDay >= 21){
+      cout << "Winter" << endl;
+   }
+   else if(inputMonth == "January" && inputDay <= 31){
+      cout << "Winter" << endl;
+   }
+   else if(inputMonth == "Febuary" && inputDay <= 29){
+      cout << "Winter" << endl;
+   }
+   else if(inputMonth == "March" && inputDay <= 19){
+      cout << "Winter" << endl;
+   }
+   else{
+      cout << "Invalid" << endl;
+   }
+
+
+   
+
+   return 0;
+}

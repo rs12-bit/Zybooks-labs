@@ -1,0 +1,90 @@
+----main.cpp----
+
+#include <iostream>
+
+#include "GVcoin.h"
+using namespace std;
+
+int CountHeads(GVcoin c, int goal) {
+   while(c.NumHeads() != goal){
+      c.Flip(); 
+   }
+   return c.NumFlips();
+}
+
+int main() {
+	GVcoin c = GVcoin(15); // Create a GVcoin object with seed value 15
+	int numHeads = 20;   // Desire 20 heads
+	int numFlips = CountHeads(c, numHeads);   // Should return 40 using GVcoin object with seed value 15
+	cout << "Total number of flips for 20 heads: " << numFlips << endl;
+
+   c = GVcoin(15);
+	numHeads = 100;   // Desire 100 heads
+	numFlips = CountHeads(c, numHeads);   // Should return 194 using GVcoin object with seed value 15
+	cout << "Total number of flips for 100 heads: " << numFlips << endl;
+}
+
+----GVcoin.cpp----
+#include <iostream>
+#include <string>
+
+#include "GVcoin.h"
+using namespace std;
+
+GVcoin::GVcoin(int seed) {
+	heads = 0;
+	flips = 0;
+	isHeads = true;
+	SetSeed(seed);
+}
+
+void GVcoin::Flip() {
+	int random = rand() % 2;
+	if (random == 1) {
+		isHeads = true;
+	}
+	else {
+		isHeads = false;
+	}
+	flips++;  // Increment flip count
+	if(isHeads) {
+		heads++; // Increment heads count if current flip results in heads
+	}
+}
+
+int GVcoin::NumFlips() {
+	return flips;
+}
+
+int GVcoin::NumHeads() {
+	return heads;
+}
+
+// set the random number generator seed for testing
+void GVcoin::SetSeed(int seed) {
+	srand(seed);
+}
+
+----gvcoin.h----
+
+#ifndef GVCOIN_H_
+#define GVCOIN_H_
+
+#include <iostream>
+using namespace std;
+
+class GVcoin {
+    public:
+		GVcoin(int seed);
+		void Flip();
+		int NumFlips();
+		int NumHeads();
+		void SetSeed(int seed);
+
+    private:
+		bool isHeads;
+        int flips;
+        int heads;
+};
+
+#endif /* GVCOIN_H_ */

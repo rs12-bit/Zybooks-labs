@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cctype>
+#include <array> 
+using namespace std;
+
+int main() {
+
+   int holdNum = 0;
+   int n = 5;
+   int num[5];
+  
+
+
+   for(int i = 0; i < n; i++){
+      cin >> num[i];
+      if((num[i] > holdNum)){
+         holdNum = num[i];
+      }
+      
+   }
+   
+   cout << holdNum << endl;
+
+   return 0;
+}

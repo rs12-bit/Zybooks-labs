@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+   int feet, inches, userInput;
+   cin >> userInput;
+   
+   feet = userInput/12;
+   inches = userInput % 12;
+   
+   cout << feet << "'" << inches << endl;
+
+   return 0;
+}

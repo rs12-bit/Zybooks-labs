@@ -1,0 +1,76 @@
+----main.cpp----
+
+#include <iostream>
+#include "GVdie.h"
+using namespace std;
+
+int RollTotal(GVdie d, int total) {
+   int numRolls = 0;
+   int rollSum = 0;
+   
+   while(rollSum < total){
+      d.Roll();
+      rollSum = rollSum +d.GetValue();
+      numRolls++;
+   }
+   return numRolls;
+}
+
+
+int main() {
+	GVdie die = GVdie();
+	die.SetSeed(15); // Create a GVdie object with seed value 15
+	int total;
+	int rolls;
+
+	cin >> total;
+	rolls = RollTotal(die, total); // Should return the number of rolls to reach total.
+	cout << "Number of rolls to reach at least " << total << ": " << rolls << endl;
+
+	return 0;
+}
+
+----gvdie.cpp----
+
+#include "GVdie.h"
+#include <iostream>
+using namespace std;
+
+GVdie::GVdie() {
+	srand(time(0)); //Unique seed
+	myValue = rand() % 6 + 1;
+}
+
+void GVdie::Roll() {
+	myValue = (rand() % 6) + 1;  //1 to 6
+}
+
+int GVdie::GetValue() {
+	return myValue;
+}
+
+// set the random number generator seed for testing
+void GVdie::SetSeed(int seed) {
+	srand(seed);
+}
+
+----gvdie.h----
+
+#ifndef GVDIE_H_
+#define GVDIE_H_
+
+#include <iostream>
+using namespace std;
+
+class GVdie {
+	public:
+		GVdie();
+		void Roll();
+		int GetValue();
+		void SetSeed(int seed);
+
+	private:
+		int myValue;
+};
+
+#endif /* GVDIE_H_ */

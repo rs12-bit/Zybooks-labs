@@ -1,0 +1,46 @@
+----product.cpp----
+
+#include <iostream>
+#include <string>
+#include "Product.h"
+
+using namespace std;
+
+Product::Product(string code, double price, int count) {
+    this->code = code;
+    this->price = price;
+    this->count = count;
+}
+
+void Product::SetCode(string code) {
+    this->code = code;
+}
+
+string Product::GetCode() {
+    return code;
+}
+
+void Product::SetPrice(double price) {
+    this->price = price;
+}
+
+double Product::GetPrice() {
+    return price;
+}
+
+void Product::SetCount(int count) {
+    this->count = count;
+}
+
+int Product::GetCount() {
+    return count;
+}
+
+
+void Product::AddInventory(int num) {
+    this->count = count + num;
+}
+
+void Product::SellInventory(int num) {
+    this->count = count - num;
+}

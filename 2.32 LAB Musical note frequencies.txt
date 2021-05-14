@@ -1,0 +1,33 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+
+   float f0;
+   float x;
+   float r1 = pow(2.0,1.0/12);
+   int n;
+   
+   cin >> f0;
+   cout << fixed << setprecision(2);
+   cout << f0 << " ";
+   
+   for(int n=1; n<=4;n++){
+      x = f0 * pow(r1,n);
+      cout << fixed << setprecision(2);
+      if(n < 4){
+      cout << x << " ";
+      }
+      else if( x > 4 ){
+         cout << x; }
+   }   
+   
+   
+   cout << endl;
+
+
+   return 0;
+}

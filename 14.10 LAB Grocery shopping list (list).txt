@@ -1,0 +1,39 @@
+----main.cpp----
+#include "ListItem.h"
+#include <string>
+#include <list>
+#include <iostream>
+
+using namespace std;
+
+int main (int argc, char* argv[]) {
+   // TODO: Declare a list called shoppingList of type ListItem
+   list<ListItem> shoppingList;
+   
+   string item;
+
+   // TODO: Read inputs (items) and add them to the shoppingList list
+   //       Read inputs until a -1 is input
+   while(true){
+      getline(cin,item);
+      if(item == "-1"){
+         break;
+      }
+      shoppingList.push_back(item);
+   }
+   
+   
+
+   // TODO: Print the shoppingList list using the PrintNodeData() function
+   int size = shoppingList.size();
+   for(int i = 0; i < size; i++){
+      ListItem item = shoppingList.front();
+      shoppingList.pop_front();
+      item.PrintNodeData();
+   }
+   
+   
+   return 0;
+}
+
+

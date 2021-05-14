@@ -1,0 +1,79 @@
+----simplecar.cpp----
+#include "SimpleCar.h"
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+SimpleCar::SimpleCar() {
+	miles = 0;
+}
+
+void SimpleCar::Drive(int dist) {
+	miles = miles + dist;
+}
+
+void SimpleCar::Reverse(int dist) {
+	miles = miles - dist;
+}
+
+int SimpleCar::GetOdometer() {
+	return miles;
+}
+
+void SimpleCar::HonkHorn() {
+	cout << "beep beep" << endl;
+}
+
+void SimpleCar::Report() {
+	cout << "Car has driven: " << miles << " miles" << endl;
+}
+
+----main.cpp-----
+
+#include "SimpleCar.h"
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+   int forward, reverse;
+   cin >> forward >> reverse;
+
+   SimpleCar daCa;
+   
+   daCa.HonkHorn();
+   daCa.Drive(forward);
+   daCa.Reverse(reverse);
+   daCa.Report();
+
+   
+	
+	return 0;
+}
+
+----simplecar.h----
+
+#ifndef SIMPLECAR_H_
+#define SIMPLECAR_H_
+
+#include <iostream>
+using namespace std;
+
+class SimpleCar {
+
+    public:
+		SimpleCar();
+		void Drive(int dist);
+		void Reverse(int dist);
+		int GetOdometer();
+		void HonkHorn();
+		void Report();
+
+    private:
+        int miles;
+};
+
+#endif /* SIMPLECAR_H_ */

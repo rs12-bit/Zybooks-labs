@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+   int val1;
+   int val2;
+   int val3;
+   int max;
+
+   cin >> val1 >> val2 >> val3;
+   
+   if(val1 > val2 && val1 > val3){
+      max = val1;
+   }
+   else if(val2 > val1  && val2 > val3){
+      max = val2;
+   }
+   else if(val3 > val1 && val3 > val2){
+      max = val3;
+   }
+   cout << max << endl;
+
+    return 0;
+}

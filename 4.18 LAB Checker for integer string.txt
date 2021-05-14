@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+   string userString;
+   int i;
+   char cNum = 1;
+
+
+   cin >> userString;
+   
+
+   for(i = 0; i < userString.length(); i++){
+      if(!(userString[i]>='0' && userString[i]<='9')){
+         cNum = 0;
+         break;
+      }
+   }
+
+   if(cNum == 1)
+   {
+      cout<<"Yes" << endl;
+   }
+   else{
+      cout<<"No" << endl;
+   }
+
+
+   return 0;
+}

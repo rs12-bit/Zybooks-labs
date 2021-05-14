@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+   int highwayNumber;
+   int primary;
+   int aux;
+   
+
+   
+   
+   cin >> highwayNumber;
+
+   if((highwayNumber > 0) && (highwayNumber < 100)){
+      primary = highwayNumber;
+   }
+   if((highwayNumber <= 0) || (highwayNumber > 999)){
+      cout << highwayNumber << " is not a valid interstate highway number." << endl;
+   }
+   else if((highwayNumber >= 100)  && (highwayNumber <= 999 &&  highwayNumber != 0)){
+      aux = highwayNumber;
+      int test = aux % 100;
+         if(test % 2 == 0){
+            cout << "I-" << aux << " is auxiliary, serving I-" << test << ", going east/west." << endl;
+         }
+         else if(test % 2 != 0){
+            cout << "I-" << aux << " is auxiliary, serving I-" << test << ", going north/south." << endl;
+         }
+   }
+   else if(primary % 2 == 0){
+      cout << "I-" << primary << " is primary, going east/west." << endl;
+   }
+   else if(primary % 2 != 0){
+      cout << "I-" << primary << " is primary, going north/south." << endl;
+   }
+   
+
+   
+   
+   
+   return 0;
+}

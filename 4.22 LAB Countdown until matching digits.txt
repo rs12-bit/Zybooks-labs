@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+   int userNum;
+   int validNum;
+   
+   cin >> userNum;
+   
+   if((userNum < 11) || (userNum > 100)){
+      cout << "Input must be 11-100" << endl;
+      exit(0);
+   }
+  
+   for(int i = userNum; userNum >= 11; i--){
+      cout << i << " ";
+      if (i % 11 == 0){
+         cout << endl;
+         break;
+      }
+   }
+
+
+   return 0;
+}

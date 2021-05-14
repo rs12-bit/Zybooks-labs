@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+
+   int x;
+   int red;
+   int green;
+   int blue;
+
+
+
+   cin >> red >> green >> blue;
+
+
+   if(red < green && red < blue){
+      x = red;
+   }
+   else if(green < blue){
+      x = green;
+    }
+   else{
+      x = blue;
+   }
+
+
+   red = red - x;
+
+   green = green - x;
+
+   blue = blue - x;
+
+   cout << red << " " << green << " " << blue << endl;
+    
+   return 0;
+}

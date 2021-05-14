@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void countingFunction(){
+   int low;
+   int high;
+   int x;
+   int multiples = 0;
+   
+   cin >> low >> high >> x;
+   
+   for(int i = low; i <= high; i++){
+      if( i % x == 0){
+         multiples = multiples + 1;
+      }
+   }
+   cout << multiples << endl;
+}
+   
+   
+
+
+int main() {
+
+   countingFunction();
+
+   return 0;
+}

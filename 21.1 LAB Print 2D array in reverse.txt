@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+   int i,j;
+   int colNum = 3;
+   int rowNum = 4;
+   int arr[rowNum][colNum];
+   
+   for(i = 0; i < rowNum; i++){
+      for(j = 0;  j < colNum; j++){
+         cin >> arr[i][j];
+      }
+   }
+   
+   for(i = rowNum - 1; i >= 0 ; i--){
+      for(j = colNum - 1;  j >=  0; j--){
+         cout << arr[i][j] << " ";
+      }
+      cout << endl;
+   }
+   
+   
+
+   return 0;
+}

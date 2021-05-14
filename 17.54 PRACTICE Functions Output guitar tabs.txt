@@ -1,0 +1,49 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+
+string e = "e|-", B = "B|-", G = "G|-", D = "D|-", A = "A|-", E = "E|-";
+
+int chordsNum;
+int i; 
+
+cin >> chordsNum;
+
+char chord[chordsNum];
+
+
+   for(i = 0; i < chordsNum; i++){
+      cin >> chord[i];
+      if(chord[i] == 'G'){
+         e.append("3-");
+         B.append("0-");
+         G.append("0-");
+         D.append("0-");
+         A.append("2-");
+         E.append("3-");
+      }
+      else if(chord[i] == 'C'){
+         e.append("0-");
+         B.append("1-");
+         G.append("0-");
+         D.append("2-");
+         A.append("3-");
+         E.append("--");
+         }
+      else if(chord[i] == 'D'){
+         e.append("2-");
+         B.append("3-");
+         G.append("2-");
+         D.append("0-");
+         A.append("--");
+         E.append("--");
+   }
+}
+
+   cout << e << endl << B << endl << G << endl << D << endl << A << endl << E << endl;
+
+return 0;
+}
