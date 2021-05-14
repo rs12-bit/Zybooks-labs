@@ -1,0 +1,62 @@
+----encylopedia.h----
+#ifndef ENCYCLOPEDIAH
+#define ENCYCLOPEDIAH
+
+#include "Book.h"
+
+class Encyclopedia : public Book {
+
+   // TODO: Declare mutator functions -
+   //       SetEdition(), SetNumVolumes()
+   public:
+      void SetEdition(string bookedition);
+      void SetNumVolumes(int volumes);
+
+   // TODO: Declare accessor functions -
+      string GetEdition();
+      int GetNumVolumes();
+
+   // TODO: Declare a PrintInfo() function that overrides
+   // the PrintInfo in Book class
+      void PrintInfo();
+    
+   // TODO: Declare private fields: edition, numVolumes
+   private:
+      string edition;
+      int numVolumes;
+};
+
+#endif
+
+----encyclopedia.cpp----
+
+#include "Encyclopedia.h"
+#include <iostream>
+
+// Define functions declared in Encyclopedia.h
+
+void Encyclopedia :: SetEdition(string bookEdition){
+   edition = bookEdition;
+}
+
+void Encyclopedia :: SetNumVolumes(int volumes){
+   numVolumes = volumes;
+}
+
+string Encyclopedia :: GetEdition(){
+   return edition;
+}
+
+int Encyclopedia :: GetNumVolumes(){
+   return numVolumes;
+}
+
+void Encyclopedia :: PrintInfo(){
+   cout << "Book Information: " << endl;
+   cout << "   Book Title: " << title <<endl;
+   cout << "   Author: " << author << endl;
+   cout << "   Publisher: " << publisher << endl;
+   cout << "   Publication Date: " << publicationDate <<endl;
+   cout << "   Edition: " << edition << endl;
+   cout << "   Number of Volumes: " << numVolumes << endl;
+}

@@ -1,0 +1,132 @@
+----main.cpp----
+
+#include <iostream>
+#include<string>
+#include "Dog.h"
+
+using namespace std;
+
+int main() {
+
+	string petName, dogName, dogBreed;
+	int petAge, dogAge;
+
+	Pet myPet;
+	Dog myDog;
+
+	getline(cin, petName);
+	cin >> petAge;
+	cin.ignore();
+	getline(cin, dogName);
+	cin >> dogAge;
+	cin.ignore();
+	getline(cin, dogBreed);
+
+	// TODO: Create generic pet (using petName, petAge) and then call PrintInfo    
+	myPet.SetName(petName);
+	myPet.SetAge(petAge);
+	myPet.PrintInfo();
+
+
+	// TODO: Create dog pet (using dogName, dogAge, dogBreed) and then call PrintInfo
+   myDog.SetBreed(dogBreed);
+   myDog.SetName(dogName);
+   myDog.SetAge(dogAge);
+   myDog.PrintInfo();
+   
+
+	// TODO: Use GetBreed(), to output the breed of the dog
+
+   cout << "   Breed: " << myDog.GetBreed() << endl;
+}
+
+----pet.h----
+
+#ifndef PETH
+#define PETH
+
+#include <string>
+using namespace std;
+
+class Pet {
+	protected:
+		string petName;
+		int petAge;
+
+	public:
+		void SetName(string userName);
+
+		string GetName();
+
+		void SetAge(int userAge);
+
+		int GetAge();
+
+		void PrintInfo();
+};
+
+#endif
+
+----dog.h----
+
+#ifndef DOGH
+#define DOGH
+
+#include <string>
+#include "Pet.h"
+
+class Dog : public Pet {
+	private:
+		string dogBreed;
+
+	public:
+		void SetBreed(string userBreed);
+
+		string GetBreed();
+};
+
+#endif
+
+----pet.cpp----
+
+#include "Pet.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Pet::SetName(string userName) {
+	petName = userName;
+}
+
+string Pet::GetName() {
+	return petName;
+}
+
+void Pet::SetAge(int userAge) {
+	petAge = userAge;
+}
+
+int Pet::GetAge() {
+	return petAge;
+}
+
+void Pet::PrintInfo() {
+	cout << "Pet Information: " << endl;
+	cout << "   Name: " << petName << endl;
+	cout << "   Age: " << petAge << endl;
+}
+
+----dog.cpp----
+
+#include "Dog.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Dog::SetBreed(string userBreed) {
+	dogBreed = userBreed;
+}
+
+string Dog::GetBreed() {
+	return dogBreed;
+}

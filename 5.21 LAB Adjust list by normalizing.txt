@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>   // Must include vector library to use vectors
+#include <cmath>
+#include <iomanip> 
+using namespace std;
+
+int main() {
+   
+   
+   int NUM_VAL;
+   vector<float> userNum(NUM_VAL);
+   int i;
+   float percent;
+   float test;
+   
+   cin >> NUM_VAL;
+
+   for (i = 0; i < NUM_VAL; i++){
+      cin >> userNum.at(i);
+      userNum.push_back(i);
+      if(i == 0 || test < userNum.at(i)){
+         test = userNum.at(i);
+      }
+      
+   }
+
+   for( i = 0; i < NUM_VAL; i++){
+      cout << fixed << setprecision(2);
+      cout << userNum.at(i) / test << " ";
+   }
+
+   cout << endl;
+   
+   return 0;
+}

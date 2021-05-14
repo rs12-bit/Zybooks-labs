@@ -1,0 +1,152 @@
+----artist.h----
+
+
+#ifndef ARTISTH
+#define ARTISTH
+
+#include <string>
+using namespace std;
+
+class Artist{
+   public:
+      Artist();
+
+      Artist(string artistName, int birthYear, int deathYear);
+
+      string GetName() const;
+
+      int GetBirthYear() const;
+
+      int GetDeathYear() const;
+
+      void PrintInfo() const;
+   
+   private:
+      // TODO: Declare private data members - artistName, birthYear, deathYear
+      string artistName;
+      int birthYear;
+      int deathYear;
+
+};
+
+#endif
+
+
+----artist.cpp----
+
+#include "Artist.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+// TODO: Define default constructor
+Artist :: Artist(){
+   artistName = "None";
+   birthYear = 0;
+   deathYear = 0;
+   
+}
+
+// TODO: Define second constructor to initialize
+//       private fields (artistName, birthYear, deathYear)
+Artist :: Artist(string artistName, int birthYear, int deathYear){
+   this->artistName = artistName;
+   this->birthYear = birthYear;
+   this->deathYear = deathYear;
+}
+
+// TODO: Define get functions: GetName(), GetBirthYear(), GetDeathYear()
+string Artist :: GetName() const{
+   return artistName;
+}
+int Artist ::  GetBirthYear() const{
+   return birthYear;
+}
+int Artist :: GetDeathYear() const{
+   return deathYear;
+}
+
+
+// TODO: Define PrintInfo() function
+//      If deathYear is entered as -1, only print birthYear
+void Artist :: PrintInfo() const{
+   if(deathYear == -1){
+      cout << "Artist: " << artistName << ", born " << birthYear << endl;
+   }
+   else{
+      cout << "Artist: " << artistName << " (" << birthYear << "-" << deathYear << ")" << endl;
+   }
+}
+
+----artwork.h----
+
+#ifndef ARTWORKH
+#define ARTWORKH
+
+#include "Artist.h"
+#include <string>
+using namespace std;
+
+class Artwork{
+   public:
+      Artwork();
+
+      Artwork(string title, int yearCreated, Artist artist);
+
+      string GetTitle();
+
+      int GetYearCreated();
+
+      void PrintInfo();
+   
+   private:
+      // TODO: Declare private data members - title, yearCreated
+      string title;
+      int yearCreated;
+
+      // TODO: Declare private data member artist of type Artist
+      Artist artist;
+
+};
+
+#endif
+
+----artwork.cpp----
+
+#include "Artist.h"
+#include "Artwork.h"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// TODO: Define default constructor
+Artwork :: Artwork(){
+   title = "None";
+   yearCreated = 0;
+}
+
+// TODO: Define second constructor to initialize
+//       private fields (title, yearCreated, artist)
+Artwork :: Artwork(string title, int yearCreated, Artist artist){
+   this->title = title;
+   this->yearCreated = yearCreated;
+   this->artist = artist;
+}
+
+// TODO: Define get functions: GetTitle(), GetYearCreated()
+string Artwork ::  GetTitle(){
+   return title;
+}
+int Artwork :: GetYearCreated(){
+   return yearCreated;
+}
+
+
+// TODO: Define PrintInfo() function
+void Artwork::  PrintInfo(){
+   artist.PrintInfo();
+   cout << "Title: " << title << ", " << yearCreated;
+   
+   
+}

@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <cctype>
+using namespace std;
+
+string CreateAcronym(string userPhrase){
+   
+   string userAcronym;
+   int i;
+   
+   for(i = 0; i < userPhrase.size(); i++){
+      if((i == 0) || (userPhrase[i - 1] == ' ')) {
+         if(isupper(userPhrase[i])){
+            userAcronym = userAcronym + userPhrase.push_back(i);
+         }
+      }
+   }
+   return userAcronym;
+}
+   
+
+int main(){
+   string userInput;
+   string outputAc;
+   
+   cin >> userInput;
+   
+   outputAc = CreateAcronym(userInput);
+   cout << outputAc;
+   
+   
+   return 0;
+}

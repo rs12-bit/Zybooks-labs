@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int DateParser(string month){
+    int monthInt = 0;
+    
+    if(month == "January")
+        monthInt = 1;
+    else if(month == "February")
+        monthInt = 2;    
+    else if(month == "March")
+        monthInt = 3;
+    else if(month == "April")
+        monthInt = 4;   
+    else if(month == "May")
+        monthInt = 5;
+    else if(month == "June")
+        monthInt = 6;
+    else if(month == "July")
+        monthInt = 7;
+    else if(month == "August")
+        monthInt = 8;
+    else if(month == "September")
+        monthInt = 9;
+    else if(month == "October")
+        monthInt = 10;
+    else if(month == "November")
+        monthInt = 11;
+    else if(month == "December")
+        monthInt = 12;
+    return monthInt;
+    
+}
+int main() {
+    while(true){
+        string s,r;
+        int len1=0,len2=0,month,date;
+        //input string from user
+        getline(cin,s);
+        //if -1 is entered by user then it exit the program
+        if(s=="-1")
+            break;
+        //loop to find out the length of first substring
+        for(int i=0;s[i]!=' ';i++){
+            len1++;
+        }
+        //substring method will store the first substring in string r
+        r=s.substr(0,len1); 
+        month=DateParser(r);
+        // if given month is 0,i.e, invalid it ignore this case
+        if(month==0)
+            continue;
+        else{
+            //loop to find out the length of second substring
+            for (int i=len1+1;s[i]!=' '; i++) {
+                len2++;
+            }
+            /*substring method will store the first 
+            substring in string r,i.e, date*/
+            r=s.substr(len1+1,len2);
+            //if last character of date is ',', then it will ignore the case
+            if(r[len2-1]!=',')
+                continue;
+            else{
+                //stoi method will convert the string into integer
+                date=stoi(r.substr(0,len2-1));
+                //check for valid date
+                if(date>=32 || date<=0)
+                    continue;
+                else{
+                    //substr method will now store the year in r
+                        r=s.substr(len1+len2+2,s.length());
+                        int year = stoi(r);
+                        //check validity of year
+                        if(year<=999 || year>=10000)
+                            continue;
+                        else{
+                            //if all conditions are met, then it print the date
+                            cout<<month<<"/"<<date<<"/"<<r<<endl;
+                        }    
+                    }
+                }
+            }
+    }
+        return 0;
+}

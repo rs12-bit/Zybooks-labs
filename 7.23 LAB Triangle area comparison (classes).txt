@@ -1,0 +1,84 @@
+----main.cpp----
+#include <iostream>
+#include "Triangle.h"
+using namespace std;
+
+int main(int argc, const char* argv[]) {
+   Triangle triangle1;
+   Triangle triangle2;
+   
+   double base1, base2, height1, height2;
+   cin >> base1 >> height1;
+   cin >> base2 >> height2;
+   
+   // TODO: Read and set base and height for triangle1 (use SetBase() and SetHeight())
+   
+   triangle1.SetBase(base1);
+   triangle1.SetHeight(height1);
+
+   // TODO: Read and set base and height for triangle2 (use SetBase() and SetHeight())
+   
+   triangle2.SetBase(base2);
+   triangle2.SetHeight(height2);
+   
+   // TODO: Determine larger triangle (use GetArea())
+   double area1 = triangle1.GetArea();
+   double area2 = triangle2.GetArea();
+   
+   
+   cout << "Triangle with larger area:" << endl;
+
+   // TODO: Output larger triangle's info (use PrintInfo())
+   
+   if(area1 > area2){
+      triangle1.PrintInfo();
+   }
+   else{
+      triangle2.PrintInfo();
+   }
+   
+   return 0;
+}
+
+----triangle.h----\#ifndef TRIANGLEH
+#define TRIANGLEH
+
+class Triangle {
+   private:
+      double base;
+      double height;
+   
+   public:
+      void SetBase(double userBase);
+      void SetHeight(double userHeight);
+      double GetArea() const;
+      void PrintInfo() const;
+};
+
+#endif
+----triagnle.cpp----
+#include "Triangle.h"
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+
+using namespace std;
+
+void Triangle::SetBase(double userBase) {
+   base = userBase;
+}
+
+void Triangle::SetHeight(double userHeight) {
+   height = userHeight;
+}
+
+double Triangle::GetArea() const {
+   return 0.5 * base * height;
+}
+
+void Triangle::PrintInfo() const {
+   cout << fixed << setprecision(2);
+   cout << "Base: " << base << endl;
+   cout << "Height: " << height << endl;
+   cout << "Area: " << round(GetArea() * 100.0f) / 100.0f << endl;
+}

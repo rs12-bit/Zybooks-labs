@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+string HeadsOrTails(){
+   int numRandom;
+   numRandom = (rand() % 2) + 1;
+   
+   if(numRandom == 1){
+      return "heads";
+   }
+   else{
+      return "tails";
+   }
+}
+
+int main() {
+   int i;
+   int numRandom;
+   
+   cin >> numRandom;
+   
+   srand(2);  // Unique seed
+
+   for(i = 0; i < numRandom; i++){
+      cout << HeadsOrTails() << endl;
+   }
+   
+
+
+   return 0;
+}
+
+
+   

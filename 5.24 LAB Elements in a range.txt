@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+   int NUM_VAL;
+   vector<int> userNum(NUM_VAL);
+   int i;
+   int maxNum;
+   int minNum;
+   int minRange,maxRange;
+   
+   
+   cin >> NUM_VAL;
+   
+   for( i = 0; i < NUM_VAL; i++){
+      cin >> userNum.at(i);
+      userNum.push_back(i);
+   }
+   
+
+   cin >> minRange >> maxRange;
+   
+   for(i = 0; i < NUM_VAL; i++){
+       if((userNum.at(i) >= minRange) && (userNum.at(i) <= maxRange)){
+           cout << userNum.at(i) <<",";
+       }
+       
+   }
+   
+   
+   cout << endl;
+   
+    return 0;
+}

@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool IsVectorEven(vector<int> myVec){
+    for(int i = 0; i < myVec.size(); i++){
+        if(myVec[i] % 2 == 1){
+            return false;
+      }
+   }
+   return true;
+}
+
+bool IsVectorOdd(vector<int> myVec){
+    for(int i = 0; i < myVec.size(); i++){
+        if(myVec[i] % 2 == 0){
+            return false;
+      }
+   }
+   return true;
+}
+
+
+int main(){
+   
+   vector<int> userNum;
+   int NUM_VALS;
+   int numInputs;
+   
+   cin >> NUM_VALS;
+   
+   for(int i = 0; i < NUM_VALS; i++){
+      cin >> numInputs;
+      userNum.push_back(numInputs);
+   }
+   
+   
+   if(IsVectorEven(userNum)){
+      cout << "all even" << endl;
+   }
+   else if(IsVectorOdd(userNum)){
+      cout << "all odd" << endl;
+   }
+   else{
+      cout << "not even or odd" << endl;
+   }
+   
+   
+   return 0;
+}

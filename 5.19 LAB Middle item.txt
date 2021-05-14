@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>   // Must include vector library to use vectors
+using namespace std;
+
+int main() {
+
+   int NUM_VALS = 10;
+   vector<int> userNum(NUM_VALS);
+   int i;
+   int tempVar;
+   int middleNum;
+
+   
+   
+   for (i = 0; i < userNum.size(); i++){
+      cin >> userNum.at(i);
+      tempVar = userNum.at(i);
+         if(tempVar == -1){
+            int k = ((i)/2);
+            cout << "Middle item: " << userNum.at(k) << endl;
+            exit(0);
+         }
+   } 
+   
+   if((userNum.size() > 9) || (tempVar == -1)){
+      cout << "Too many numbers" << endl;
+   }
+
+
+   
+   
+   
+
+
+   
+
+   return 0;
+}

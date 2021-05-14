@@ -1,0 +1,96 @@
+----main.cpp----
+#include <iostream>
+#include <string>
+#include "Team.h"
+using namespace std;
+
+int main(int argc, const char* argv[]) {
+   string name;
+   int wins;
+   int losses;
+   Team team;
+
+   cin >> name;
+   cin >> wins;
+   cin >> losses;
+
+   team.SetTeamName(name);
+   team.SetTeamWins(wins);
+   team.SetTeamLosses(losses);
+
+   if (team.GetWinPercentage() >= 0.5) {
+      cout << "Congratulations, Team " << team.GetTeamName() <<
+              " has a winning average!" << endl;
+   }
+   else {
+      cout << "Team " << team.GetTeamName() << " has a losing average." << endl;
+   }
+}
+----team.h----
+#ifndef TEAMH
+#define TEAMH
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+
+class Team {
+   private:  // TODO: Declare private data members - teamName, teamWins, teamLosses
+      string teamName;
+      int teamWins;
+      int teamLosses;
+      
+   public:// TODO: Declare mutator functions - SetTeamName(), SetTeamWins(), SetTeamLosses()
+      void SetTeamName(string name1);
+      void SetTeamWins(int wins1);
+      void SetTeamLosses(int losses1);
+      
+      string GetTeamName(); // TODO: Declare accessor functions -  GetTeamName(), GetTeamWins(), GetTeamLosses()
+      int GetTeamWins();
+      int GetTeamLosses();
+      double GetWinPercentage(); // TODO: Declare GetWinPercentage()
+      
+   
+
+};
+
+#endif
+----team.cpp----
+#include "Team.h"
+
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+#include <string>
+
+using namespace std;
+
+// TODO: Implement mutator functions - SetTeamName(), SetTeamWins(), SetTeamLosses()
+
+void Team :: SetTeamName(string name){
+   teamName = name;
+}
+void Team :: SetTeamWins(int wins){
+   teamWins = wins;
+}
+void Team :: SetTeamLosses(int losses){
+   teamLosses = losses;
+}
+
+// TODO: Implement accessor functions - GetTeamName(), GetTeamWins(), GetTeamLosses()
+
+string Team :: GetTeamName(){
+   return teamName;
+}
+int Team :: GetTeamWins(){
+   return teamWins;
+}
+int Team :: GetTeamLosses(){
+   return teamLosses;
+}
+
+double Team :: GetWinPercentage(){  // TODO: Implement GetWinPercentage()
+   return static_cast<double>(teamWins) / (static_cast<double>(teamWins)+teamLosses);
+}

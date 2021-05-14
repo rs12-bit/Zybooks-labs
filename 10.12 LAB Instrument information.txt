@@ -1,0 +1,78 @@
+----stringinstrument.h----
+
+#ifndef STR_INSTRUMENTH
+#define STR_INSTRUMENTH
+
+#include "Instrument.h"
+
+class StringInstrument : public Instrument {
+	// TODO: Declare private data members: numStrings, numFrets
+   private: 
+      string numStrings;
+      string numFrets;
+      
+	// TODO: Declare mutator functions - 
+	//      SetNumOfStrings(), SetNumOfFrets()     
+	
+	// TODO: Declare accessor functions -
+	//      GetNumOfStrings(), GetNumOfFrets()
+   public:
+      void SetNumOfStrings(string numStrings);
+      void SetNumOfFrets(string numFrets);
+      string GetNumOfStrings();
+      string GetNumOfFrets();
+      
+};
+
+#endif
+#ifndef STR_INSTRUMENTH
+#define STR_INSTRUMENTH
+
+#include "Instrument.h"
+
+class StringInstrument : public Instrument {
+	// TODO: Declare private data members: numStrings, numFrets
+   private: 
+      string numStrings;
+      string numFrets;
+      
+	// TODO: Declare mutator functions - 
+	//      SetNumOfStrings(), SetNumOfFrets()     
+	
+	// TODO: Declare accessor functions -
+	//      GetNumOfStrings(), GetNumOfFrets()
+   public:
+      void SetNumOfStrings(string numStrings);
+      void SetNumOfFrets(string numFrets);
+      string GetNumOfStrings();
+      string GetNumOfFrets();
+      
+};
+
+#endif
+
+
+----stringinstrument.cpp----
+
+#include "StringInstrument.h"
+
+// TODO: Define mutator functions - 
+//      SetNumOfStrings(), SetNumOfFrets()
+void StringInstrument::SetNumOfStrings(string numStrings){
+   this->numStrings = numStrings;
+}
+void StringInstrument::SetNumOfFrets(string numFrets){
+   this->numFrets = numFrets;
+}
+   
+
+// TODO: Define accessor functions -
+//      GetNumOfStrings(), GetNumOfFrets()
+
+string StringInstrument::GetNumOfStrings(){
+   return numStrings;
+}
+
+string StringInstrument::GetNumOfFrets(){
+   return numFrets;
+}

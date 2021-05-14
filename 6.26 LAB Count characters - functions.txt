@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int CountCharacters(char userChar, string userString){
+   int occurance = 0;
+   for (int i = 0; i < userString.size(); i++){
+      if(userString.at(i) == userChar){
+         occurance = occurance + 1;
+      }
+   }
+   return occurance;
+}
+
+
+int main() {
+   char userChar;
+   string userString;
+   
+   
+   cin >> userChar >> userString;
+   cout << CountCharacters(userChar,userString) << endl;
+
+   return 0;
+}
